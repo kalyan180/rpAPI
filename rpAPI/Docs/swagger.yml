@@ -1,0 +1,42 @@
+swagger: '2.0'
+info:
+  description: Recommendation Placement Application Api
+  version: Version 1.0
+  title: Recomended Placement Applicaton API
+  termsOfService: urn:tos
+host: localhost:9090
+basePath: /
+tags:
+  - name: hello-rest-controller
+    description: Hello Rest Controller
+    
+paths:
+  /hello:
+    get:
+      security:
+         - bearerAuth: []
+      tags:
+        - hello-rest-controller
+      summary: firstPage
+      operationId: firstPageUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '400':
+          description: |
+            Bad request    
+        '401':
+          description: |
+            Unauthorized
+        
+      
+   
+securityDefinitions:
+  bearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
